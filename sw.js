@@ -1,5 +1,5 @@
 var CACHE = 'wco-playbook-v19';
-var FILES = ['./', './WCO-5x5-Flag-Football-Playbook-v19.1.html', './manifest.json'];
+var FILES = ['./', './index.html', './manifest.json'];
 self.addEventListener('install', function(e) {
   e.waitUntil(caches.open(CACHE).then(function(c) { return c.addAll(FILES); }));
   self.skipWaiting();
