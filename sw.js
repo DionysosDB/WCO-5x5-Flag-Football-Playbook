@@ -1,21 +1,12 @@
 var CACHE = 'wco-playbook-v19';
-var INDEX = '/WCO-5x5-Flag-Football-Playbook/index.html';
-var FILES = [
-  '/WCO-5x5-Flag-Football-Playbook/index.html',
-  '/WCO-5x5-Flag-Football-Playbook/manifest.json'
-];
+var INDEX = 'https://dionysosdb.github.io/WCO-5x5-Flag-Football-Playbook/index.html';
 
 self.addEventListener('install', function(e) {
   e.waitUntil(
     caches.open(CACHE).then(function(cache) {
-      return Promise.all(FILES.map(function(url) {
-        return fetch(url, {cache: 'reload'}).then(function(res) {
-          if (!res.ok) throw new Error('Bad response for ' + url);
-          return cache.put(url, res);
-        }).catch(function(err) {
-          console.warn('[SW] Failed to cache:', url, err);
-        });
-      }));
+      return fetch(INDEX, {cache: 'reload'}).then(function(res) {
+        return cache.put(INDEX, res);
+      });
     })
   );
   self.skipWaiting();
@@ -34,29 +25,16 @@ self.addEventListener('activate', function(e) {
 });
 
 self.addEventListener('fetch', function(e) {
-  var url = e.request.url;
-
-  if (e.request.mode === 'navigate') {
-    e.respondWith(
-      caches.match(INDEX).then(function(cached) {
-        return cached || fetch(e.request).catch(function() { return cached; });
-      })
-    );
-    return;
-  }                                           // ← THIS } was missing before
-
+  if (e.request.url.indexOf('dionysosdb.github.io/WCO-5x5-Flag-Football-Playbook/') === -1) return;
   e.respondWith(
     caches.match(e.request).then(function(cached) {
       if (cached) return cached;
       return fetch(e.request).then(function(res) {
-        return caches.open(CACHE).then(function(cache) {
-          cache.put(e.request, res.clone());
-          return res;
-        });
+        var clone = res.clone();
+        caches.open(CACHE).then(function(cache) { cache.put(e.request, clone); });
+        return res;
       }).catch(function() {
-        if (url.indexOf('/WCO-5x5-Flag-Football-Playbook/') !== -1) {
-          return caches.match(INDEX);
-        }
+        return caches.match(INDEX);
       });
     })
   );
