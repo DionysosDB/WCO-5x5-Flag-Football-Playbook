@@ -1,0 +1,10 @@
+{
+  "name": "WCO 5v5 Flag Football Playbook",
+  "short_name": "WCO Playbook",
+  "start_url": "./WCO-5x5-Flag-Football-Playbook-v19.1.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#4499ff",
+  "icons": [{"src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏈</text></svg>", "sizes": "any", "type": "image/svg+xml"}]
+}
