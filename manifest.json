@@ -1,10 +1,19 @@
 {
   "name": "WCO 5v5 Flag Football Playbook",
   "short_name": "WCO Playbook",
-  "start_url": "./index.html",
-  "scope": "./",
+  "description": "Bill Walsh West Coast Offense — 5v5 Flag Football",
+  "start_url": "/WCO-5x5-Flag-Football-Playbook/index.html",
+  "scope": "/WCO-5x5-Flag-Football-Playbook/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#0d1117",
   "theme_color": "#4499ff",
-  "icons": [{"src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏈</text></svg>", "sizes": "any", "type": "image/svg+xml"}]
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%8F%88</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
