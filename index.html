@@ -342,21 +342,6 @@ canvas{display:block;max-width:100%}
   h1{font-size:1.1rem}
 }
 </style>
-  <link rel="manifest" href="manifest.json">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="WCO Playbook">
-  <meta name="theme-color" content="#4499ff">
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('./sw.js', { scope: './' })
-          .then(function(r) { console.log('SW registered:', r.scope); })
-          .catch(function(e) { console.warn('SW failed:', e); });
-      });
-    }
-  </script>
 </head>
 <body>
 <div class="wrap">
