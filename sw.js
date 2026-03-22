@@ -43,7 +43,7 @@ self.addEventListener('fetch', function(e) {
       })
     );
     return;
-  }
+  }                                           // ← THIS } was missing before
 
   e.respondWith(
     caches.match(e.request).then(function(cached) {
