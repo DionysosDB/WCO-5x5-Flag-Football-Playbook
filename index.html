@@ -1,5 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="manifest" href="/WCO-5x5-Flag-Football-Playbook/manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="WCO Playbook">
+<meta name="theme-color" content="#4499ff">
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/WCO-5x5-Flag-Football-Playbook/sw.js', { scope: '/WCO-5x5-Flag-Football-Playbook/' })
+        .then(function(r) { console.log('[PWA] SW registered:', r.scope); })
+        .catch(function(e) { console.warn('[PWA] SW failed:', e); });
+    });
+  }
+</script>
+
+  
+  
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
