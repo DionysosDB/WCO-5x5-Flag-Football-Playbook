@@ -8,8 +8,7 @@ An interactive, single-file HTML playbook built for 5v5 flag football teams runn
 
 ## 🚀 Live Demo
 
-> Host on GitHub Pages: `Settings → Pages → Deploy from branch → main → / (root)`
-> Then visit: `https://DionysosDB.github.io/WCO-5x5-Flag-Football-Playbook-v19.html`
+https://DionysosDB.github.io/WCO-5x5-Flag-Football-Playbook
 
 ---
 
