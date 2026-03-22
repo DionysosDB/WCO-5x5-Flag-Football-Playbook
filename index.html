@@ -87,10 +87,10 @@ canvas{display:block;width:100%;height:auto;border-radius:8px;border:2px solid #
 .def-card .card-title{font-size:1.1rem;font-weight:900;color:#4499ff;margin-bottom:3px;letter-spacing:.01em}
 .def-card .card-sub{font-size:.8rem;color:#7799bb}
 .def-card .body{display:flex;gap:0;flex-wrap:wrap}
-.def-card .info{flex:1;min-width:180px;padding:12px 14px}
-.def-card .info table{width:100%;font-size:.78rem;border-collapse:collapse}
-.def-card .info th{color:#7799bb;font-weight:600;padding:3px 6px 3px 0;white-space:nowrap;width:40%}
-.def-card .info td{color:#cce4ff;padding:3px 0}
+.def-card .info{flex:1;min-width:180px;padding:12px 14px;overflow-wrap:break-word;word-break:break-word;min-width:0}
+.def-card .info table{width:100%;font-size:.78rem;border-collapse:collapse;table-layout:fixed}
+.def-card .info th{color:#7799bb;font-weight:600;padding:3px 6px 3px 0;white-space:nowrap;width:38%;vertical-align:top}
+.def-card .info td{color:#cce4ff;padding:3px 0;word-break:break-word;overflow-wrap:anywhere}
 .def-card .notes{font-size:.76rem;color:#8899aa;margin-top:8px;line-height:1.5}
 .def-card .warn{font-size:.76rem;color:#ff8866;background:#1a0800;border-left:3px solid #ff8866;padding:5px 8px;border-radius:4px;margin-top:8px}
 .def-card .btns{display:flex;gap:6px;padding:6px 10px 10px}
@@ -333,7 +333,7 @@ canvas{display:block;max-width:100%}
   .result-area{font-size:.85rem}
   .btns{flex-wrap:wrap}
   .btn{font-size:.75rem;padding:7px 10px}
-}
+.def-card .body{flex-direction:column !important}.def-card .info{width:100%;min-width:0 !important;box-sizing:border-box}.def-card .notes{font-size:.74rem;word-break:break-word;overflow-wrap:anywhere}.def-card .warn{font-size:.74rem;word-break:break-word;overflow-wrap:anywhere}.def-card .card-top{flex-wrap:wrap}.def-card .card-sub{word-break:break-word}}
 
 /* ── RESPONSIVE: SMALL MOBILE (≤400px) ──────────────────────────────────── */
 @media(max-width:400px){
@@ -377,9 +377,9 @@ canvas{display:block;max-width:100%}
 
 <!-- TAB BAR -->
 <div class="tab-bar" id="tabBar">
-  <button class="tab active-pass" id="tab-pass" onclick="showTab('pass')">&#127944; Passing Plays</button>
-  <button class="tab" id="tab-run" onclick="showTab('run')">&#127939; Running Plays</button>
-  <button class="tab" id="tab-trick" onclick="showTab('trick')">&#127922; Trick Plays</button>
+  <button class="tab active-pass" id="tab-pass" onclick="showTab('pass')">🏈 PASS</button>
+  <button class="tab" id="tab-run" onclick="showTab('run')">🏃 RUN</button>
+  <button class="tab" id="tab-trick" onclick="showTab('trick')">🎲 TRICK</button>
   <button class="tab" id="tab-coach" onclick="showTab('coach')">&#128203; Coach</button>
   <button class="tab" id="tab-def" onclick="showTab('def')">&#128737; Defense</button>
   <button class="tab" id="tab-routes" onclick="showTab('routes')">&#127937; Routes</button>
@@ -389,7 +389,7 @@ canvas{display:block;max-width:100%}
 <!-- PASSING PANEL -->
 <div class="panel show" id="panel-pass" style="display:block">
   <div class="panel-hdr">
-    <span class="panel-title" style="color:#ffd700">&#127944; Passing Plays</span>
+    <span class="panel-title" style="color:#ffd700">🏈 PASS</span>
     <span class="panel-sub">10 WCO concepts &mdash; timing routes, high-low reads, quick release</span>
   </div>
   <div id="pass-container"></div>
@@ -398,7 +398,7 @@ canvas{display:block;max-width:100%}
 <!-- RUNNING PANEL -->
 <div class="panel" id="panel-run" style="display:none">
   <div class="panel-hdr">
-    <span class="panel-title" style="color:#44ff88">&#127939; Running Plays</span>
+    <span class="panel-title" style="color:#44ff88">🏃 RUN</span>
     <span class="panel-sub">6 runs &mdash; attack soft edges and keep the defense honest</span>
   </div>
   <div id="run-container"></div>
@@ -407,7 +407,7 @@ canvas{display:block;max-width:100%}
 <!-- TRICK PANEL -->
 <div class="panel" id="panel-trick" style="display:none">
   <div class="panel-hdr">
-    <span class="panel-title" style="color:#ff8c00">&#127922; Trick Plays</span>
+    <span class="panel-title" style="color:#ff8c00">🎲 TRICK</span>
     <span class="panel-sub">6 trick plays &mdash; max 1-2 per game, element of surprise is everything</span>
   </div>
   <div id="trick-container"></div>
